@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Painel de Produtividade - Gusta</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      padding: 40px;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    .bookmark {
+      display: inline-block;
+      margin: 10px 10px 10px 0;
+      padding: 12px 20px;
+      background: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+    .bookmark:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>🧰 Painel de Produtividade do Gusta</h1>
+  <p>Arraste os botões abaixo para sua barra de favoritos:</p>
+
+  <a class="bookmark" href="javascript%3A%28function%28%29%7Bdocument.querySelectorAll%28%27input%5Btype%3D%22checkbox%22%5D%27%29.forEach%28cb%20%3D%3E%20cb.checked%20%3D%20true%29%3B%7D%29%28%29%3B">☑️ Marcar Todos os Checkboxes</a>
+  <a class="bookmark" href="%0Ajavascript%3A%28async%20%28%29%20%3D%3E%20%7B%0A%20%20try%20%7B%0A%20%20%20%20const%20delay%20%3D%20%28ms%29%20%3D%3E%20new%20Promise%28%28res%29%20%3D%3E%20setTimeout%28res%2C%20ms%29%29%3B%0A%20%20%20%20const%20botaoPeriodo%20%3D%20%5B...document.querySelectorAll%28%27a%27%29%5D.find%28el%20%3D%3E%20el.textContent.includes%28%27%2B%20Incluir%20per%C3%ADodo%27%29%29%3B%0A%20%20%20%20if%20%28botaoPeriodo%29%20botaoPeriodo.click%28%29%3B%0A%20%20%20%20else%20return%20alert%28%27%E2%9D%8C%20Bot%C3%A3o%20%22%2B%20Incluir%20per%C3%ADodo%22%20n%C3%A3o%20encontrado%27%29%3B%0A%20%20%20%20await%20delay%28500%29%3B%0A%20%20%20%20const%20hoje%20%3D%20new%20Date%28%29%3B%0A%20%20%20%20const%20finalAnoSeguinte%20%3D%20new%20Date%28hoje.getFullYear%28%29%20%2B%201%2C%2011%2C%2031%29%3B%0A%20%20%20%20function%20formatarData%28data%29%20%7B%0A%20%20%20%20%20%20const%20dia%20%3D%20String%28data.getDate%28%29%29.padStart%282%2C%20%270%27%29%3B%0A%20%20%20%20%20%20const%20mes%20%3D%20String%28data.getMonth%28%29%20%2B%201%29.padStart%282%2C%20%270%27%29%3B%0A%20%20%20%20%20%20const%20ano%20%3D%20data.getFullYear%28%29%3B%0A%20%20%20%20%20%20return%20%60%24%7Bdia%7D/%24%7Bmes%7D/%24%7Bano%7D%60%3B%0A%20%20%20%20%7D%0A%20%20%20%20const%20dataInicial%20%3D%20formatarData%28hoje%29%3B%0A%20%20%20%20const%20dataFinal%20%3D%20formatarData%28finalAnoSeguinte%29%3B%0A%20%20%20%20const%20inputs%20%3D%20document.querySelectorAll%28%27input%5Btype%3D%22text%22%5D%27%29%3B%0A%20%20%20%20const%20inputInicial%20%3D%20%5B...inputs%5D.find%28el%20%3D%3E%20el.name%3F.includes%28%27%5Bdata_inicial%5D%27%29%29%3B%0A%20%20%20%20const%20inputFinal%20%3D%20%5B...inputs%5D.find%28el%20%3D%3E%20el.name%3F.includes%28%27%5Bdata_final%5D%27%29%29%3B%0A%20%20%20%20if%20%28inputInicial%29%20%7B%0A%20%20%20%20%20%20inputInicial.value%20%3D%20dataInicial%3B%0A%20%20%20%20%20%20inputInicial.dispatchEvent%28new%20Event%28%27input%27%2C%20%7B%20bubbles%3A%20true%20%7D%29%29%3B%0A%20%20%20%20%20%20inputInicial.dispatchEvent%28new%20Event%28%27change%27%2C%20%7B%20bubbles%3A%20true%20%7D%29%29%3B%0A%20%20%20%20%7D%0A%20%20%20%20if%20%28inputFinal%29%20%7B%0A%20%20%20%20%20%20inputFinal.value%20%3D%20dataFinal%3B%0A%20%20%20%20%20%20inputFinal.dispatchEvent%28new%20Event%28%27input%27%2C%20%7B%20bubbles%3A%20true%20%7D%29%29%3B%0A%20%20%20%20%20%20inputFinal.dispatchEvent%28new%20Event%28%27change%27%2C%20%7B%20bubbles%3A%20true%20%7D%29%29%3B%0A%20%20%20%20%7D%0A%20%20%20%20const%20dias%20%3D%20%5B%221%22%2C%20%222%22%2C%20%223%22%2C%20%224%22%2C%20%225%22%5D%3B%0A%20%20%20%20for%20%28let%20i%20%3D%200%3B%20i%20%3C%20dias.length%3B%20i%2B%2B%29%20%7B%0A%20%20%20%20%20%20const%20botaoDia%20%3D%20%5B...document.querySelectorAll%28%27a%27%29%5D.find%28el%20%3D%3E%20el.textContent.includes%28%27%2B%20Incluir%20dia%20da%20semana%27%29%29%3B%0A%20%20%20%20%20%20if%20%28botaoDia%29%20botaoDia.click%28%29%3B%0A%20%20%20%20%20%20await%20delay%28300%29%3B%0A%20%20%20%20%20%20const%20selects%20%3D%20%5B...document.querySelectorAll%28%27select%27%29%5D.filter%28el%20%3D%3E%20el.name.includes%28%27%5Bdia_atendimento_id%5D%27%29%29%3B%0A%20%20%20%20%20%20const%20ultimoSelect%20%3D%20selects%5Bselects.length%20-%201%5D%3B%0A%20%20%20%20%20%20ultimoSelect.value%20%3D%20dias%5Bi%5D%3B%0A%20%20%20%20%20%20ultimoSelect.dispatchEvent%28new%20Event%28%27change%27%2C%20%7B%20bubbles%3A%20true%20%7D%29%29%3B%0A%20%20%20%20%7D%0A%20%20%20%20await%20delay%281000%29%3B%0A%20%20%20%20%5B...document.querySelectorAll%28%27a%27%29%5D.filter%28a%20%3D%3E%20a.textContent.includes%28%27%2B%20Incluir%20hor%C3%A1rio%27%29%29.forEach%28btn%20%3D%3E%20btn.click%28%29%29%3B%0A%20%20%20%20await%20delay%28500%29%3B%0A%20%20%20%20const%20todosInputs%20%3D%20%5B...document.querySelectorAll%28%27input%27%29%5D%3B%0A%20%20%20%20const%20inicio%20%3D%20todosInputs.filter%28i%20%3D%3E%20i.name.includes%28%27%5Bhora_inicio%5D%27%29%29%3B%0A%20%20%20%20const%20fim%20%3D%20todosInputs.filter%28i%20%3D%3E%20i.name.includes%28%27%5Bhora_fim%5D%27%29%29%3B%0A%20%20%20%20const%20retorno%20%3D%20todosInputs.filter%28i%20%3D%3E%20i.name.includes%28%27%5Bretorno%5D%27%29%29%3B%0A%20%20%20%20inicio.forEach%28i%20%3D%3E%20%7B%20i.value%20%3D%20%2708%3A00%27%3B%20i.dispatchEvent%28new%20Event%28%27input%27%2C%20%7B%20bubbles%3A%20true%20%7D%29%29%3B%20%7D%29%3B%0A%20%20%20%20fim.forEach%28i%20%3D%3E%20%7B%20i.value%20%3D%20%2721%3A00%27%3B%20i.dispatchEvent%28new%20Event%28%27input%27%2C%20%7B%20bubbles%3A%20true%20%7D%29%29%3B%20%7D%29%3B%0A%20%20%20%20retorno.forEach%28i%20%3D%3E%20%7B%0A%20%20%20%20%20%20i.value%20%3D%20%2730%27%3B%0A%20%20%20%20%20%20i.dispatchEvent%28new%20Event%28%27input%27%2C%20%7B%20bubbles%3A%20true%20%7D%29%29%3B%0A%20%20%20%20%20%20i.dispatchEvent%28new%20Event%28%27change%27%2C%20%7B%20bubbles%3A%20true%20%7D%29%29%3B%0A%20%20%20%20%7D%29%3B%0A%20%20%20%20alert%28%27%E2%9C%85%20Agenda%20criada%20com%20sucesso%21%27%29%3B%0A%20%20%7D%20catch%20%28e%29%20%7B%0A%20%20%20%20alert%28%27Erro%3A%20%27%20%2B%20e.message%29%3B%0A%20%20%7D%0A%7D%29%28%29%3B%0A">📅 Criar Agenda com Datas e Vagas</a>
+</body>
+</html>
